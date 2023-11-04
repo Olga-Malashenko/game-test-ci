@@ -21,5 +21,5 @@ test('should get sorted list', () => {
     { name: 'лучник', health: 80 },
     { name: 'мечник', health: 10 },
   ];
-  expect(result).toBe(expected);
+  expect(result).toEqual(expected);
 });
