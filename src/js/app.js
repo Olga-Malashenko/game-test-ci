@@ -1,4 +1,4 @@
-export default function getLevel(userHealth) {
+export function getLevel(userHealth) {
   let healthLevel;
   if (userHealth.health < 15) {
     healthLevel = 'critical';
@@ -8,4 +8,8 @@ export default function getLevel(userHealth) {
     healthLevel = 'healthy';
   }
   return healthLevel;
+}
+
+export function getList(unsortedList) {
+  return unsortedList.sort((a, b) => b.health - a.health);
 }
