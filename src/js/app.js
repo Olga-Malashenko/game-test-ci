@@ -1,11 +1,22 @@
-export default function getLevel(userHealth) {
-  let healthLevel;
-  if (userHealth.health < 15) {
+import fetchData from './http';
+
+export function getLevel(userId) {
+  const response = fetchData(`https://server/user/${userId}`);
+
+  // TODO: логика обработки
+  /* let healthLevel;
+  if (userID.health < 15) {
     healthLevel = 'critical';
-  } else if (userHealth.health < 50) {
+  } else if (userID.health < 50) {
     healthLevel = 'wounded';
-  } else if (userHealth.health <= 100) {
+  } else if (userID.health <= 100) {
     healthLevel = 'healthy';
   }
-  return healthLevel;
+  return healthLevel; */
+
+  if (response.status === 'ok') {
+    return `Ваш текущий уровень: ${response.level}`;
+  }
+
+  return 'Информация об уровне временно недоступна';
 }
