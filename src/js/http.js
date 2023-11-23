@@ -6,6 +6,6 @@ export function httpPost(url) {
   throw new Error(url);
 }
 
-export default function fetchData(url) {
-  throw new Error('Mock this!');
+export function fetchData(url) {
+  throw new Error(url);
 }
